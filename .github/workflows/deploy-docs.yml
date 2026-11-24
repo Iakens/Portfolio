@@ -1,0 +1,36 @@
+name: Déploiement Portfolio MkDocs
+
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types: [update-docs]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du Portfolio et des sous-modules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Mise à jour des sous-modules vers le dernier commit
+        run: |
+          git submodule update --remote --merge
+
+      - name: Installation de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Installation des dépendances
+        run: pip install -r requirements.txt
+
+      - name: Déploiement sur GitHub Pages
+        run: mkdocs gh-deploy --force
