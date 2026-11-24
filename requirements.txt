@@ -1,2 +1,2 @@
 mkdocs-material
-mkdocs-monorepo-plugin
+mkdocs-multirepo-plugin

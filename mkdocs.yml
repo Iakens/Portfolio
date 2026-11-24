@@ -1,5 +1,4 @@
-site_name: Portfolio - Projets Robotique & Embarqué
-site_description: Documentation technique matérielle et logicielle
+site_name: Portfolio - Projets Robotique
 
 theme:
   name: material
@@ -27,11 +26,19 @@ theme:
 
 plugins:
   - search
-  - monorepo
+  - multirepo:
+      cleanup: true          # Supprime les fichiers temporaires clonés après le build
+      keep_docs_dir: true    # Conserve le dossier docs/ principal de Portfolio
+      repos:
+        - section: Arduino & Registres
+          import_url: https://github.com/Iakens/learning_arduino_with_registers/tree/main
+          # Optionnel : si le dépôt n'a pas de mkdocs.yml et que vous voulez juste importer son dossier docs/ :
+          # import_url: https://github.com&docs_dir=docs/*
 
 nav:
   - Accueil: index.md
-  - Arduino & Registres: '!include learning_arduino_with_registers/mkdocs.yml'
+  # Le plugin injecte automatiquement la section "Arduino & Registres" dans la navigation !
+
 
 markdown_extensions:
   - admonition
@@ -45,6 +52,9 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - tables
   - attr_list
   - md_in_html

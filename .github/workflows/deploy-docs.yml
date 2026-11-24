@@ -14,23 +14,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Récupération du Portfolio et des sous-modules
+      - name: Récupération du Portfolio
         uses: actions/checkout@v7
-        with:
-          submodules: recursive
-          token: ${{ secrets.GH_PAT }}
-
-      - name: Mise à jour des sous-modules vers le dernier commit
-        run: |
-          git submodule update --remote --merge
 
       - name: Installation de Python
         uses: actions/setup-python@v7
         with:
-          python-version: 3.x
+          python-version: '3.x'
 
       - name: Installation des dépendances
         run: pip install -r requirements.txt
 
       - name: Déploiement sur GitHub Pages
+        env:
+          AccessToken: ${{ secrets.GH_PAT }}  # Utilisé automatiquement par mkdocs-multirepo
         run: mkdocs gh-deploy --force
