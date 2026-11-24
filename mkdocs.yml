@@ -31,7 +31,7 @@ plugins:
 
 nav:
   - Accueil: index.md
-  - Arduino & Registres: '!include ./repos/learning_arduino_with_registers/mkdocs.yml'
+  - Arduino & Registres: '!include ./learning_arduino_with_registers/mkdocs.yml'
 
 markdown_extensions:
   - admonition
