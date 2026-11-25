@@ -1,21 +1,25 @@
 site_name: Portfolio - Projets Robotique
+repo_url: https://github.com
+repo_name: Iakens/Portfolio
 
 theme:
   name: material
   language: fr
+  icon:
+    logo: material/robot-industrial
   palette:
-    - scheme: default
-      primary: indigo
-      accent: cyan
-      toggle:
-        icon: material/brightness-7
-        name: Passer en mode sombre
     - scheme: slate
-      primary: indigo
-      accent: cyan
+      primary: black
+      accent: teal
       toggle:
         icon: material/brightness-4
         name: Passer en mode clair
+    - scheme: default
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Passer en mode sombre
   features:
     - navigation.tabs
     - navigation.sections
@@ -62,3 +66,6 @@ markdown_extensions:
 extra_javascript:
   - https://unpkg.com
   - https://kicanvas.org
+
+extra_css:
+    - stylesheets/extra.css
