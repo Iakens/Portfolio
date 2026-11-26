@@ -36,9 +36,9 @@ plugins:
         # Optionnel : si le dépôt n'a pas de mkdocs.yml et que vous voulez juste importer son dossier docs/ :
         # import_url: https://github.com&docs_dir=docs/*
         - section: learning-arduino-registers
-          import_url: git@github.com:Iakens/learning_arduino_with_registers?branch=main
+          import_url: ssh://git@github.com/Iakens/learning_arduino_with_registers?branch=main
         - section: esc-foc-single-motor
-          import_url: git@github.com:Iakens/ESC_FOC_Single_Motor?branch=main
+          import_url: ssh://git@github.com/Iakens/ESC_FOC_Single_Motor?branch=main
 
 
 markdown_extensions:
