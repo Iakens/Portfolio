@@ -10,7 +10,7 @@ hide:
 # Robotique & Systèmes Embarqués
 
 <p class="hero-subtitle">
-Conception de PCB sous KiCad, programmation bas niveau (bare-metal) sur microcontrôleurs (STM32) et architecture robotique sous ROS2.
+Conception de PCB sous KiCad, programmation bas niveau sur microcontrôleurs (AVR, STM32) et architecture robotique sous ROS2.
 </p>
 
 <div class="hero-badges">
@@ -22,8 +22,8 @@ Conception de PCB sous KiCad, programmation bas niveau (bare-metal) sur microcon
 </div>
 
 <div class="hero-actions" markdown>
-[Explorer les projets :octicons-arrow-down-24:](#projets-selectionnes){ .md-button .md-button--primary }
-[Mon GitHub :fontawesome-brands-github:](https://github.com){ .md-button }
+[Explorer les projets :octicons-arrow-down-24:](#projets){ .md-button .md-button--primary }
+[Mon GitHub :fontawesome-brands-github:](https://github.com/Iakens){ .md-button }
 </div>
 
 </div>
@@ -39,18 +39,30 @@ Conception de PCB sous KiCad, programmation bas niveau (bare-metal) sur microcon
 
     Low-level programming for AVR micro-controller (ATmega328P) using registers.
 
-    [:octicons-arrow-right-24: See documentation](learning_arduino_with_registers/index.md)  
+    [:octicons-arrow-right-24: See documentation](learning-arduino-registers/index.md)  
     [:octicons-mark-github-16: View code on GitHub](https://github.com/Iakens/learning_arduino_with_registers)
 
 </div>
 
 <div class="grid cards" markdown>
 
--   :material-chip:{ .lg .middle } **ESC FOC sensorless**
+-   :material-chip:{ .lg .middle } **Sensorless FOC ESC**
 
     ---
 
-	Design of a sensorless FOC (Field Oriented Control) BLDC driver.
+	Design of a sensorless FOC (Field Oriented Control) ESC for a single  BLDC driver.
+
+    [:octicons-arrow-right-24: See documentation](esc-foc-single-motor/index.md)  
+    [:octicons-mark-github-16: View code on GitHub](https://github.com/Iakens/ESC_FOC_Single_Motor)
+</div>
+
+<div class="grid cards" markdown>
+
+-   :material-chip:{ .lg .middle } **Quad-rotor ESC**
+
+    ---
+
+	Design of a quad-rotor sensorless FOC ESC .
 
 </div>
 

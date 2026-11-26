@@ -1,5 +1,5 @@
 site_name: Portfolio - Projets Robotique
-repo_url: https://github.com
+repo_url: https://github.com/
 repo_name: Iakens/Portfolio
 
 theme:
@@ -32,16 +32,13 @@ plugins:
   - search
   - multirepo:
       cleanup: true          # Supprime les fichiers temporaires clonés après le build
-      keep_docs_dir: true    # Conserve le dossier docs/ principal de Portfolio
       repos:
-        - section: Arduino & Registres
-          import_url: https://github.com/Iakens/learning_arduino_with_registers/tree/main
-          # Optionnel : si le dépôt n'a pas de mkdocs.yml et que vous voulez juste importer son dossier docs/ :
-          # import_url: https://github.com&docs_dir=docs/*
-
-nav:
-  - Accueil: index.md
-  # Le plugin injecte automatiquement la section "Arduino & Registres" dans la navigation !
+        # Optionnel : si le dépôt n'a pas de mkdocs.yml et que vous voulez juste importer son dossier docs/ :
+        # import_url: https://github.com&docs_dir=docs/*
+        - section: learning-arduino-registers
+          import_url: git@github.com:Iakens/learning_arduino_with_registers?branch=main
+        - section: esc-foc-single-motor
+          import_url: git@github.com:Iakens/ESC_FOC_Single_Motor?branch=main
 
 
 markdown_extensions:
@@ -65,7 +62,8 @@ markdown_extensions:
 
 extra_javascript:
   - https://unpkg.com
-  - https://kicanvas.org
+  - path: javascript/kicanvas.js
+    type: module
 
 extra_css:
     - stylesheets/extra.css
